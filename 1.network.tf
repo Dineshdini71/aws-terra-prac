@@ -7,8 +7,8 @@ resource "aws_vpc" "terra_vpc1" {
   }
   # lifecycle -> Suppose, If change are made in aws console, Terrform will accept that changes.
   lifecycle {
-    ignore_changes = [ 
-      tags, 
+    ignore_changes = [
+      tags,
     ]
   }
 }
