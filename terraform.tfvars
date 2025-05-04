@@ -1,0 +1,33 @@
+# aws_access_key = "xxxxxx"
+# aws_secret_key = "yyyyyyy"
+# aws_region = "us-east-1"
+# vpc_cidr = "10.1.0.0/16"
+# public_subnet1_cidr = "10.1.1.0/24"
+# public_subnet2_cidr = "10.1.2.0/24"
+# public_subnet3_cidr = "10.1.3.0/24"
+# private_subnet_cidr = "10.1.20.0/24"
+# vpc_name = "terraform-aws-testing"
+# IGW_name = "terraform-aws-igw"
+# public_subnet1_name = "Terraform_Public_Subnet1-testing"
+# public_subnet2_name = "Terraform_Public_Subnet2-testing"
+# public_subnet3_name = "Terraform_Public_Subnet3-testing"
+# private_subnet_name = "Terraform_Private_Subnet-testing"
+# Main_Routing_Table = "Terraform_Main_table-testing"
+# key_name = "LaptopKey"
+# environment = "dev"
+# ------------------------------------------------------------------------------
+# V.P.C
+nv_vpc1_cidr     = "168.11.0.0/16"
+nv_vpc2_cidr     = "172.12.0.0/16"
+mumbai_vpc1_cidr = "192.12.0.0/16"
+mumbai_vpc2_cidr = "155.18.0.0/16"
+vpc_name         = "terraform_"
+nv_cidr_subnet_1 = "168.11.1.0/24"
+nv_cidr_subnet_2 = "168.11.2.0/24"
+nv_cidr_subnet_3 = "168.11.3.0/24"
+
+
+# S-U-B-N-E-T-S  
+# I-N-T-E-R- -G-A-T-E-W-A-Y
+# R-O-U-T-E -T-A-B-E-L-S
+# S-E-C-U-R-I-T-Y -G-R-O-U-P-S
