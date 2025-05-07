@@ -92,3 +92,8 @@ Terraform State move:
 		# New
 		resource "aws_instance" "new_name" {}
 Cmd:- terraform state mv aws_instance.old_name aws_instance.new_name
+
+Terraform state remove:
+removes a resource from Terraform's state file without destroying the actual resource in AWS or other providers.
+	terraform state rm <resource_address>
+cmd:- terraform state rm aws_s3_bucket.my_bucket
