@@ -10,6 +10,9 @@ terraform {
     bucket = "terraform-tfstate-buck8"
     key    = "terraform_bucket.tfstate"
     region = "us-east-1"
+    # Replace this with your DynamoDB table name!
+    dynamodb_table = "terra_state_lock"
+    encrypt        = true
   }
 }
 
