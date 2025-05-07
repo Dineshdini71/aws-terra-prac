@@ -46,7 +46,8 @@ variable "vpc_name" {}
 variable "nv_cidr_subnet_1" {}
 variable "nv_cidr_subnet_2" {}
 variable "nv_cidr_subnet_3" {}
-
-
+variable "ami" {}
+variable "instance_type" {}
+variable "key" {}
 
 

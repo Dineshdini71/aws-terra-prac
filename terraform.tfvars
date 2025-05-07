@@ -16,7 +16,7 @@
 # key_name = "LaptopKey"
 # environment = "dev"
 # ------------------------------------------------------------------------------
-# V.P.C
+
 nv_vpc1_cidr     = "168.11.0.0/16"
 nv_vpc2_cidr     = "172.12.0.0/16"
 mumbai_vpc1_cidr = "192.12.0.0/16"
@@ -25,9 +25,6 @@ vpc_name         = "terraform_"
 nv_cidr_subnet_1 = "168.11.1.0/24"
 nv_cidr_subnet_2 = "168.11.2.0/24"
 nv_cidr_subnet_3 = "168.11.3.0/24"
-
-
-# S-U-B-N-E-T-S  
-# I-N-T-E-R- -G-A-T-E-W-A-Y
-# R-O-U-T-E -T-A-B-E-L-S
-# S-E-C-U-R-I-T-Y -G-R-O-U-P-S
+ami              = "ami-084568db4383264d4"
+instance_type    = "t2.micro"
+key              = "one-keypair"
