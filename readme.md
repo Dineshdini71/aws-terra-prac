@@ -50,7 +50,8 @@ terraform destory -> To destory the changes.
 		terraform state-list
 		terraform destory -target <mention-resource>
 		
----------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
 Difference b/w variables and terraform.tfvars
 
 In variables files we're declaring the variable. where in tfvars passing the values to that variables.
@@ -58,12 +59,36 @@ In variables files we're declaring the variable. where in tfvars passing the val
 			  Terraform will not automatically use it during terraform plan. By default, it looks for terraform.tfvars. 
 			  If the required variable values are not provided, Terraform will prompt you to enter them manually.
 			  So, Instead of that, we can give cmd (--var-file .\dini.tfvars) or written file name as like (dini.auto.tfvars).
-			  -----------------------------------------------------------------------
 Terraform loads variables in the following order, with later sources taking precedence over earlier ones:
 Environment variables
-	4.The terraform.tfvars file, if present.
-	3.The terraform.tfvars.json file, if present.
-	2.Any *.auto.tfvars or *.auto.tfvars.json files, processed in lexical order of their filenames.
-	1.Any -var and -var-file options on the command line, in the order they are provided. (This includes variables 	  set by a Terraform Cloud workspace.)
+The terraform.tfvars file, if present.
+The terraform.tfvars.json file, if present.
+Any *.auto.tfvars or *.auto.tfvars.json files, processed in lexical order of their filenames.
+Any -var and -var-file options on the command line, in the order they are provided. (This includes variables set by a Terraform Cloud workspace.)
+-------------------------------------------------------------------------------------------------------
+In Terraform there are two dependencies. which is
+Implicit Dependency: 
+	Terraform automatically detects dependencies from references between resources.
+	Example:
+		resource "aws_vpc" "my_vpc" {
+		  cidr_block = "10.0.0.0/16"
+		}
 
- 
+		resource "aws_subnet" "my_subnet" {
+		  vpc_id = aws_vpc.my_vpc.id  # This creates an implicit dependency
+		  cidr_block = "10.0.1.0/24"
+		}
+Explicit Dependency:
+	When there’s no direct reference, but you still want Terraform to wait for one resource before creating another
+	resource "null_resource" "example" {
+	  depends_on = [aws_vpc.my_vpc]
+	}
+-------------------------------------------------------------------------------------------------------
+Terraform State move:
+	Move a resource from one address to another within the Terraform state file — without changing the actual infrastructure.
+	example :
+		# Old
+		resource "aws_instance" "old_name" {}
+		# New
+		resource "aws_instance" "new_name" {}
+Cmd:- terraform state mv aws_instance.old_name aws_instance.new_name

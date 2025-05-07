@@ -13,13 +13,13 @@ resource "aws_vpc" "terra_vpc1" {
   }
 }
 
-resource "aws_vpc" "terra_vpc2" {
-  cidr_block           = var.nv_vpc2_cidr
-  enable_dns_hostnames = true
-  tags = {
-    Name = "${var.vpc_name}nv_2"
-  }
-}
+# resource "aws_vpc" "terra_vpc2" {
+#   cidr_block           = var.nv_vpc2_cidr
+#   enable_dns_hostnames = true
+#   tags = {
+#     Name = "${var.vpc_name}nv_2"
+#   }
+# }
 
 #------------------------------------------------------------------------------------------------------
 #                                 CREATING VPC IN M_U_M_B_A_I.
