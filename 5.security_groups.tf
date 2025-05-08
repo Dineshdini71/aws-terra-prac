@@ -20,7 +20,7 @@ resource "aws_security_group" "allow_all_traffic" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["117.213.151.238/32"]
+    cidr_blocks = ["117.213.151.238/32", "3.89.211.199/32"]
   }
 
   egress {
